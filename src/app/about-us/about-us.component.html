@@ -1,0 +1,32 @@
+@if (images) {
+	<ngb-carousel>
+        <div>i am hvhjjjjjjjjjjere </div>
+		<ng-template ngbSlide>
+			<div class="picsum-img-wrapper">
+				<img [src]="images[0]" alt="Random first slide" />
+			</div>
+			<div class="carousel-caption">
+				<h3>Cutting Edge Courses</h3>
+				<p>Learn the essentials of cloud computing with our top-rated courses designed by industry experts.</p>
+			</div>
+		</ng-template>
+		<ng-template ngbSlide>
+			<div class="picsum-img-wrapper">
+				<img [src]="images[1]" alt="Random second slide" />
+			</div>
+			<div class="carousel-caption">
+				<h3>Second slide label</h3>
+				<p>Equip yourself with the skills needed to secure high-demand cloud computing roles in leading tech companies.</p>
+			</div>
+		</ng-template>
+		<ng-template ngbSlide>
+			<div class="picsum-img-wrapper">
+				<img [src]="images[2]" alt="Random third slide" />
+			</div>
+			<div class="carousel-caption">
+				<h3>Third slide label</h3>
+				<p>Gain in-depth knowledge of cloud architectures and services to become a cloud technology expert.</p>
+			</div>
+		</ng-template>
+	</ngb-carousel>
+}

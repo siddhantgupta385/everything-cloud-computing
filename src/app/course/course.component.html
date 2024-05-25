@@ -1,0 +1,56 @@
+<div class="course-details">
+    <h2 class="course-name">{{ name }}</h2>
+    <div class="course-summary">
+      <h3>Summary</h3>
+      <p>{{ summary }}</p>
+    </div>
+    <div class="course-info">
+        <div class="course-info-item">
+            <h3>Audience</h3>
+            <div class="audience-list">
+              <div class="audience-item" *ngFor="let audienceItem of audience">
+                {{ audienceItem }}
+              </div>
+            </div>
+          </div>
+      <div class="course-info-item">
+        <h3>Duration</h3>
+        <p>{{ duration }}</p>
+      </div>
+      <div class="course-info-item">
+        <h3>Modules</h3>
+        <div class="modules-list">
+          <div class="module" *ngFor="let module of modules">
+            <h4 (click)="toggleModule(module)">{{ module.name }}</h4>
+            <i class="fas" [ngClass]="{'fa-chevron-down': module.expanded, 'fa-chevron-up': !module.expanded}"></i>
+            <ul class="agenda-list" *ngIf="module.expanded">
+                <li class="agenda-item" *ngFor="let agendaItem of module.agenda">
+                  {{ agendaItem }}
+                </li>
+              </ul>
+          </div>
+        </div>
+      </div>
+      <div class="course-info-item">
+        <h3>Objectives</h3>
+        <div class="objectives-list">
+          <div class="objective-item" *ngFor="let objectiveItem of objectives">
+            {{ objectiveItem }}
+          </div>
+        </div>
+      </div>
+      <div class="course-info-item">
+        <h3>Prerequisites</h3>
+        <div class="prerequisites-list">
+          <div class="prerequisite-item" *ngFor="let prerequisiteItem of prerequisites">
+            {{ prerequisiteItem }}
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="course-video">
+      <h3>YouTube Link</h3>
+      <iframe width="560" height="315" [src]="youtube_link" frameborder="0" allowfullscreen></iframe>
+    </div> -->
+  </div>
+  
