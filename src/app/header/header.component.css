@@ -5,6 +5,7 @@
   align-items: center;
   height: 100px;
   background: linear-gradient(90deg, #05155e, #4a97fe);
+  cursor: pointer;
 }
 
 /* Responsive header image */
@@ -25,15 +26,15 @@
 /* Small devices (phones, 600px and down) */
 @media (max-width: 600px) {
   .header-container {
-      flex-direction: column;
-      height: auto;
+      flex-direction: row;
+      height: 60px;
   }
   .header-name {
       font-size: 1.5rem; /* Smaller font size for small devices */
       text-align: center;
   }
   .header-image {
-      height: 60px; /* Adjust image height */
+      height: 40px; /* Adjust image height */
   }
 }
 

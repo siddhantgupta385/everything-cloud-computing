@@ -4,6 +4,7 @@ import { CourseService } from '../course.service';
 import { environment } from '../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, RouterLink, RouterOutlet } from '@angular/router';
+import { LoadingService } from '../loading.service';
 
 @Component({
   selector: 'app-course',
@@ -14,8 +15,9 @@ import { ActivatedRoute, RouterLink, RouterOutlet } from '@angular/router';
 })
 export class CourseComponent {
 
-  constructor(private route: ActivatedRoute, private courseService: CourseService) {}
+  constructor(private route: ActivatedRoute, private courseService: CourseService, private loadingService: LoadingService) {}
 
+  public courseId:any
   public courseDetails:any
   public audience:any
   public duration:any
@@ -29,30 +31,29 @@ export class CourseComponent {
   ngOnInit(): void {
     // Retrieve the card name parameter from the URL
     this.route.params.subscribe(params => {
-      console.log(params)
-      console.log(params['courseName'])
-      // this.cardName = params['name'];
+      this.courseId = params['courseName']
     });
 
-    this.courseService.getCourseDetailsBYID().subscribe({
+    this.loadingService.show();
+    this.courseService.getCourseDetailsBYID(this.courseId).subscribe({
       next: (res: any) => {
-        console.log(res)
+
+        this.loadingService.hide();
+        this.courseDetails = res.course
+        this.audience = this.courseDetails.audience
+        this.duration = this.courseDetails.duration
+        this.modules = this.courseDetails.modules.map((e: any) => {
+          return { ...e, 'expanded': false };
+        }),
+        this.name = this.courseDetails.name
+        this.objectives = this.courseDetails.objectives
+        this.prerequisites = this.courseDetails.prerequisites
+        this.summary = this.courseDetails.summary
+        this.youtube_link = this.courseDetails.youtube_link
       },
       error: (err: any) => {
         console.log(err)
-        let data:any = environment.COURSE_DETAIL_SRE_BOOTCAMP
-
-        this.courseDetails = data.course
-            this.audience = this.courseDetails.audience,
-            this.duration = this.courseDetails.duration,
-            this.modules = this.courseDetails.modules,
-            this.name = this.courseDetails.name,
-            this.objectives = this.courseDetails.objectives,
-            this.prerequisites = this.courseDetails.prerequisites,
-            this.summary = this.courseDetails.summary,
-            this.youtube_link = this.courseDetails.youtube_link,
-        console.log(this.courseDetails)
-
+        this.loadingService.hide();
       }
     })
   }

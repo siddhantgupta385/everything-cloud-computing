@@ -1,0 +1,14 @@
+
+h4{
+    color: #187ae8;
+    font-weight: bold;
+  }
+  
+  span{
+    color: #999999;
+    font-weight: bold;
+  }
+  
+  .container{
+    max-width: 900px!important;
+  }

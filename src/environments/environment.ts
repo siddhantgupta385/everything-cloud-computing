@@ -4,6 +4,7 @@ export const environment = {
     LIST_ALL_JOBS_URL :'get-job-list',
     LIST_ALL_COURSES_URL :'get-course-list',
     GET_COURSE_DETAILS_BY_ID_URL :'get-course-by-id',
+    GET_JOB_DETAILS_BY_ID_URL :'get-job-by-id',
     API_KEY:'ecpapis',
     ALL_JOB_TEST_RESP:{
         "job_list": [
@@ -32,6 +33,26 @@ export const environment = {
             {
                 "name": "PLATFORM-ENGINEER-BOOTCAMP",
                 "summary": "Become an ace platform engineer enabled on foundational skillset, Terraform IaC, CICD, networking and security fundamentals."
+            },
+            {
+                "name": "SRE-BOOTCAMP",
+                "summary": "Become an ace SRE enabled on core concepts SLIs, SLOs, Error Budgets; Deploy apps on GCP, and implement Golden Signals."
+            },
+            {
+                "name": "SRE-BOOTCAMP",
+                "summary": "Become an ace SRE enabled on core concepts SLIs, SLOs, Error Budgets; Deploy apps on GCP, and implement Golden Signals."
+            },
+            {
+                "name": "SRE-BOOTCAMP",
+                "summary": "Become an ace SRE enabled on core concepts SLIs, SLOs, Error Budgets; Deploy apps on GCP, and implement Golden Signals."
+            },
+            {
+                "name": "SRE-BOOTCAMP",
+                "summary": "Become an ace SRE enabled on core concepts SLIs, SLOs, Error Budgets; Deploy apps on GCP, and implement Golden Signals."
+            },
+            {
+                "name": "SRE-BOOTCAMP",
+                "summary": "Become an ace SRE enabled on core concepts SLIs, SLOs, Error Budgets; Deploy apps on GCP, and implement Golden Signals."
             },
             {
                 "name": "SRE-BOOTCAMP",

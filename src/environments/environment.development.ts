@@ -3,6 +3,7 @@ export const environment = {
     LIST_ALL_JOBS_URL :'get-job-list',
     LIST_ALL_COURSES_URL :'get-course-list',
     GET_COURSE_DETAILS_BY_ID_URL :'get-course-by-id',
+    GET_JOB_DETAILS_BY_ID_URL :'get-job-by-id',
     API_KEY:'ecpapis',
     ALL_JOB_TEST_RESP:{
         "job_list": [

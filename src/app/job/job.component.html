@@ -1,0 +1,40 @@
+<div class="container mt-5">
+    <h4 class="fs-1">{{ name }}</h4>
+    <div>
+      <h4>Job Description</h4>
+      <p>{{ summary }}</p>
+    </div>
+    <div>
+      <div>
+        <h4>Recommended Courses</h4>
+        <p>This following courses will be helful:</p>
+        <ul>
+          <li *ngFor="let recommendedCourseItem of recommended_courses">
+            <a [routerLink] = "['/course', recommendedCourseItem]">{{ recommendedCourseItem }}</a>
+          </li>
+        </ul>
+      </div>
+
+      <div >
+        <h4>Responsibilities</h4>
+        <ul >
+          <li *ngFor="let responsibility of responsibilities">
+            <strong>{{ responsibility.header}}:</strong>
+            {{ responsibility.detail }}
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h4>Technical Skills</h4>
+        <ul>
+          <li *ngFor="let technical_skill of technical_skills">
+            {{ technical_skill }}
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- <div class="course-video">
+        <h4>YouTube Link</h4>
+        <iframe width="560" height="315" [src]="youtube_link" frameborder="0" allowfullscreen></iframe>
+      </div> -->
+  </div>

@@ -18,8 +18,8 @@ export class CourseService {
   listAllCourses(): Observable<any> {
     return this.http.get<any>(`${environment.BASE_BE_URL}/${environment.LIST_ALL_COURSES_URL}`, {headers:this.headers});
   }
-  getCourseDetailsBYID(): Observable<any> {
-    return this.http.get<any>(`${environment.BASE_BE_URL}/${environment.GET_COURSE_DETAILS_BY_ID_URL}`, {headers:this.headers});
+  getCourseDetailsBYID(course_id:any): Observable<any> {
+    return this.http.get<any>(`${environment.BASE_BE_URL}/${environment.GET_COURSE_DETAILS_BY_ID_URL}/${course_id}`, {headers:this.headers});
   }
 
 }
