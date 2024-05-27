@@ -33,7 +33,7 @@ export class JobSmallComponent implements OnInit{
           return {
             'title':e.name,
             'description':e.summary,
-            'imageUrl':'https://source.unsplash.com/featured/?blue',
+            'imageUrl':e.image,
           }
         })
         console.log(this.jobs)

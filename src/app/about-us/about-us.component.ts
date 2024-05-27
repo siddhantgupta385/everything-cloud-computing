@@ -12,9 +12,9 @@ import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 })
 export class AboutUsComponent {
   images = [
-    'https://source.unsplash.com/1800x300/?blue,',
-    'https://source.unsplash.com/1800x300/?blue,',
-    'https://source.unsplash.com/1800x300/?blue'
+    'about_us_1.avif',
+    'about_us_2.jpg',
+    'about_us_3.avif',
   ];
   
 

@@ -34,7 +34,7 @@ export class CourseSmallComponent {
             'title':e.name,
             'description':e.summary,
             'byline':e.name,
-            'imageUrl':'https://source.unsplash.com/featured/?blue',
+            'imageUrl':e.image,
           }
         })
       },
