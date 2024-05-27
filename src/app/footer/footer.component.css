@@ -1,40 +1,61 @@
-/* Make the footer fixed at the bottom */
-  footer {
-    background-color: rgb(247 247 247);
-    color: #187ae8;
-    padding: 20px 0;
-    text-align: center;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    height: 60px;
-  }
+.footer {
+  background-color: rgba(0, 0, 0, 0.03);
+  padding: 2rem 0rem;
+  margin-top: 4.7rem;
+}
 
-  .footer-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    /* padding: 0 15px; */
-    font-weight: bolder;
-  }
-  
-  .footer-links {
-    list-style: none;
-    padding: 0;
-    margin: 10px 0 0;
-    display: flex;
-    justify-content: center;
-  }
-  
-  .footer-links li {
-    margin: 0 10px;
-  }
-  
-  .footer-links a {
-    color: #00000080;
-    text-decoration: none;
-  }
-  
-  .footer-links a:hover {
-    text-decoration: underline;
-  }
-  
+.footer b {
+  color: #187ae8!important;
+  font-size: 1.4rem!important;
+  font-weight: 600!important;
+  /* line-height: 3.1rem; */
+  margin-top: 1.8rem!important;
+}
+
+.footer a {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 0.9rem!important;
+  font-weight: 600;
+  /* line-height: 1.9rem; */
+}
+
+.footer a:hover {
+  color: #ff0000; 
+}
+
+.icon-square a div:hover {
+  background-color: #187ae8!important; 
+}
+
+.footer .sub-footer {
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  margin-top: 1rem;
+  padding-top: 1rem;
+}
+
+.footer .sub-footer small {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 0.9rem;
+  line-height: 1.4rem;
+  letter-spacing: 0.1rem !important;
+}
+
+.footer .sub-footer a {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 1.4rem;
+  font-weight: 400 !important;
+  line-height: 1.4rem;
+  letter-spacing: 0.1rem !important;
+}
+
+.footer .sub-footer a:hover {
+  color: #ff0000 !important; 
+}
+
+a{
+  text-decoration: none;
+}
+a:hover{
+  color: #187ae8!important; 
+  cursor: pointer;
+}

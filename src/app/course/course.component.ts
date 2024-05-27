@@ -5,6 +5,7 @@ import { environment } from '../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, RouterLink, RouterOutlet } from '@angular/router';
 import { LoadingService } from '../loading.service';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-course',
@@ -15,7 +16,10 @@ import { LoadingService } from '../loading.service';
 })
 export class CourseComponent {
 
-  constructor(private route: ActivatedRoute, private courseService: CourseService, private loadingService: LoadingService) {}
+  constructor(private route: ActivatedRoute, private courseService: CourseService, private loadingService: LoadingService, private sanitizer: DomSanitizer) {
+    this.safeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.youtube_link);
+
+  }
 
   public courseId:any
   public courseDetails:any
@@ -27,6 +31,8 @@ export class CourseComponent {
   public prerequisites:any
   public summary:any
   public youtube_link:any
+  safeUrl: SafeResourceUrl;
+
 
   ngOnInit(): void {
     // Retrieve the card name parameter from the URL
@@ -50,6 +56,8 @@ export class CourseComponent {
         this.prerequisites = this.courseDetails.prerequisites
         this.summary = this.courseDetails.summary
         this.youtube_link = this.courseDetails.youtube_link
+        this.safeUrl = this.sanitizer.bypassSecurityTrustResourceUrl(this.youtube_link);
+
       },
       error: (err: any) => {
         console.log(err)

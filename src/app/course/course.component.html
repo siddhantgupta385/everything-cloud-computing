@@ -1,6 +1,11 @@
 <div class="container mt-5">
   <h4 class="fs-1">{{ name }}</h4>
   <span>({{ duration }})</span>
+
+  <div class="youtube-embed">
+    <iframe [src]="safeUrl" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div>
+
   <div>
     <h4>Course Description</h4>
     <p>{{ summary }}</p>
@@ -21,10 +26,10 @@
       <p>This course covers the following concepts:</p>
       <ol>
         <li *ngFor="let module of modules">
-          <h6 *ngIf="module.expanded" (click)="toggleModule(module)">{{ module.name }} <i></i>
+          <h6 *ngIf="module.expanded" (click)="toggleModule(module)">{{ module.name }} <i class="fas fa-chevron-up chevron"></i>
           </h6>
           <h6 *ngIf="!module.expanded" (click)="toggleModule(module)">{{ module.name }} <i
-              class="fas fa-chevron-down"></i></h6>
+              class="fas fa-chevron-down chevron"></i></h6>
 
           <ul class="agenda-list" *ngIf="module.expanded">
             <li class="agenda-item" *ngFor="let agendaItem of module.agenda">
@@ -51,8 +56,4 @@
       </ul>
     </div>
   </div>
-  <!-- <div class="course-video">
-      <h4>YouTube Link</h4>
-      <iframe width="560" height="315" [src]="youtube_link" frameborder="0" allowfullscreen></iframe>
-    </div> -->
 </div>
